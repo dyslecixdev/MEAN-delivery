@@ -3,11 +3,12 @@ import { RouterModule, Routes } from "@angular/router";
 import { CartComponent } from "./components/pages/cart/cart.component";
 import { HomeComponent } from "./components/pages/home/home.component";
 import { LoginComponent } from "./components/pages/login/login.component";
+import { OneFoodComponent } from "./components/pages/one-food/one-food.component";
 import { ProfileComponent } from "./components/pages/profile/profile.component";
 
 const routes: Routes = [
   {
-    path: "home",
+    path: "",
     component: HomeComponent,
   },
   {
@@ -22,10 +23,14 @@ const routes: Routes = [
     path: "login",
     component: LoginComponent,
   },
-  // Redirects from an empty string (viz. '/') to home.
   {
-    path: "",
-    redirectTo: "home",
+    path: "food/:foodId",
+    component: OneFoodComponent,
+  },
+  // Redirects from an empty string home to an empty string (viz. "/").
+  {
+    path: "home",
+    redirectTo: "",
     pathMatch: "full",
   },
 ];

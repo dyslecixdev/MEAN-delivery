@@ -1,2 +1,45 @@
 <!--HOME PAGE-->
-<div>home</div>
+<div class="min-h-[90vh] bg-red flex flex-col p-2 pb-4">
+  <!--FOOD GRID-->
+  <!-- window:resize executes the onResize method whenever the screen size changes -->
+  <mat-grid-list
+    gutterSize="16"
+    [cols]="cols"
+    rowHeight="150"
+    (window:resize)="onResize($any($event))"
+    class="mx-4 mt-4"
+  >
+    <!-- *ngFor creates a for loop through all the objects in the foods array -->
+    <mat-grid-tile *ngFor="let food of foods">
+      <!--FOOD CARD-->
+      <mat-card class="w-full h-full pb-4">
+        <mat-card-header>
+          <mat-card-title-group>
+            <!--FOOD NAME-->
+            <mat-card-title class="font-amatic font-semibold">{{
+              food.name
+            }}</mat-card-title>
+
+            <!--FOOD PRICE-->
+            <mat-card-subtitle class="font-josefin">{{
+              food.price | currency
+            }}</mat-card-subtitle>
+
+            <!--SEE DETAILS BUTTON-->
+            <mat-card-subtitle>
+              <button
+                routerLink="food/1"
+                class="bg-black text-white rounded-sm p-2 font-josefin"
+              >
+                See Details
+              </button>
+            </mat-card-subtitle>
+
+            <!--FOOD IMAGE-->
+            <img mat-card-md-image [src]="food.imageUrl" class="object-cover" />
+          </mat-card-title-group>
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -13,6 +13,7 @@ module.exports = {
         gray: "#F0F0F0",
         white: "#FCFCFC",
       },
+
       // Fonts.
       fontFamily: {
         amatic: ["Amatic SC", "cursive"],
