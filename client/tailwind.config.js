@@ -13,7 +13,11 @@ module.exports = {
         gray: "#F0F0F0",
         white: "#FCFCFC",
       },
-
+      // Background gradient.
+      backgroundImage: () => ({
+        "gradient-red":
+          "linear-gradient(90deg, #B83135, #E29295, #5D191B, #B83135)",
+      }),
       // Fonts.
       fontFamily: {
         amatic: ["Amatic SC", "cursive"],

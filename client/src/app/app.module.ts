@@ -26,6 +26,7 @@ import { LoginComponent } from "./components/pages/login/login.component";
 import { OneFoodComponent } from "./components/pages/one-food/one-food.component";
 import { SearchComponent } from "./components/partials/search/search.component";
 import { TagsComponent } from './components/partials/tags/tags.component';
+import { FooterComponent } from './components/partials/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TagsComponent } from './components/partials/tags/tags.component';
     OneFoodComponent,
     SearchComponent,
     TagsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
