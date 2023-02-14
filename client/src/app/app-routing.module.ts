@@ -16,6 +16,10 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: "tag/:tag",
+    component: HomeComponent,
+  },
+  {
     path: "cart",
     component: CartComponent,
   },

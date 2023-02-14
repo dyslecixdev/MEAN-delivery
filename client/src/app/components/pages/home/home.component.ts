@@ -22,7 +22,9 @@ export class HomeComponent {
         this.foods = this.foodService.getAllFoodsBySearchTerm(
           params.searchTerm
         );
-      else this.foods = foodService.getAllFood();
+      else if (params.tag)
+        this.foods = this.foodService.getAllFoodsByTag(params.tag);
+      else this.foods = foodService.getAllFoods();
     });
   }
 

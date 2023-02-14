@@ -11,6 +11,7 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
+import { MatChipsModule } from "@angular/material/chips";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatIconModule } from "@angular/material/icon";
@@ -24,6 +25,7 @@ import { ProfileComponent } from "./components/pages/profile/profile.component";
 import { LoginComponent } from "./components/pages/login/login.component";
 import { OneFoodComponent } from "./components/pages/one-food/one-food.component";
 import { SearchComponent } from "./components/partials/search/search.component";
+import { TagsComponent } from './components/partials/tags/tags.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { SearchComponent } from "./components/partials/search/search.component";
     LoginComponent,
     OneFoodComponent,
     SearchComponent,
+    TagsComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { SearchComponent } from "./components/partials/search/search.component";
     MatBadgeModule,
     MatButtonModule,
     MatCardModule,
+    MatChipsModule,
     MatFormFieldModule,
     MatGridListModule,
     MatIconModule,

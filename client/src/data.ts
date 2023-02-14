@@ -1,4 +1,5 @@
 import { Food } from "./app/shared/models/Food";
+import { Tag } from "./app/shared/models/Tags";
 
 export const sample_foods: Food[] = [
   {
@@ -87,7 +88,7 @@ export const sample_foods: Food[] = [
     desc: "A classic salad made with romaine lettuce, croutons, parmesan, and caesar dressing",
     price: 7,
     imageUrl: "assets/caesar-salad.jpg",
-    tags: ["Side", "Vegetarian"],
+    tags: ["Side", "Meat"],
   },
   {
     id: "12",
@@ -119,7 +120,7 @@ export const sample_foods: Food[] = [
     desc: "Three delicious almond tarts covered in powdered sugar and apples",
     price: 6,
     imageUrl: "assets/almond-tart.jpg",
-    tags: ["Dessert"],
+    tags: ["Dessert", "Vegetarian"],
   },
   {
     id: "16",
@@ -127,7 +128,7 @@ export const sample_foods: Food[] = [
     desc: "Three delicious chocolate biscottis covered with a dark chocolate drizzle",
     price: 4,
     imageUrl: "assets/chocolate-biscotti.jpg",
-    tags: ["Side"],
+    tags: ["Dessert", "Vegetarian"],
   },
   {
     id: "17",
@@ -135,7 +136,7 @@ export const sample_foods: Food[] = [
     desc: "Four delicious italian doughnuts with a raspberry filling",
     price: 8,
     imageUrl: "assets/raspberry-bomboloni.jpg",
-    tags: ["Side"],
+    tags: ["Dessert", "Vegetarian"],
   },
   {
     id: "18",
@@ -143,7 +144,7 @@ export const sample_foods: Food[] = [
     desc: "An Italian classic large enough to share with three people",
     price: 10,
     imageUrl: "assets/tiramisu.jpg",
-    tags: ["Side", "Popular"],
+    tags: ["Dessert", "Vegetarian", "Popular"],
   },
   {
     id: "19",
@@ -151,7 +152,7 @@ export const sample_foods: Food[] = [
     desc: "2 liter coca-cola bottle",
     price: 5,
     imageUrl: "assets/coke.jpg",
-    tags: ["Drink", "Popular"],
+    tags: ["Drink", "Vegetarian", "Popular"],
   },
   {
     id: "20",
@@ -159,7 +160,7 @@ export const sample_foods: Food[] = [
     desc: "2 liter diet coca-cola bottle",
     price: 5,
     imageUrl: "assets/diet-coke.jpg",
-    tags: ["Drink"],
+    tags: ["Drink", "Vegetarian"],
   },
   {
     id: "21",
@@ -167,7 +168,7 @@ export const sample_foods: Food[] = [
     desc: "2 liter dr. pepper bottle",
     price: 5,
     imageUrl: "assets/dr-pepper.jpg",
-    tags: ["Drink"],
+    tags: ["Drink", "Vegetarian"],
   },
   {
     id: "22",
@@ -175,6 +176,17 @@ export const sample_foods: Food[] = [
     desc: "2 liter sprite bottle",
     price: 5,
     imageUrl: "assets/sprite.jpg",
-    tags: ["Drink"],
+    tags: ["Drink", "Vegetarian"],
   },
+];
+
+export const sample_tags: Tag[] = [
+  { name: "All", count: 22 },
+  { name: "Pizza", count: 8 },
+  { name: "Meat", count: 5 },
+  { name: "Vegetarian", count: 17 },
+  { name: "Popular", count: 6 },
+  { name: "Side", count: 6 },
+  { name: "Dessert", count: 4 },
+  { name: "Drink", count: 4 },
 ];
