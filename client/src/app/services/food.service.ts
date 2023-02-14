@@ -8,8 +8,16 @@ import { Food } from "../shared/models/Food";
 export class FoodService {
   constructor() {}
 
+  // Gets the sample_foods array object.
   getAllFood(): Food[] {
     return sample_foods;
+  }
+
+  // Gets specific food objects from the sample_foods array.
+  getAllFoodsBySearchTerm(searchTerm: string) {
+    return this.getAllFood().filter((food) =>
+      food.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
   }
 }
 

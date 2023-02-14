@@ -1,0 +1,36 @@
+<!--SEARCH BAR-->
+<div class="w-full flex justify-center align-bottom">
+  <mat-form-field appearance="fill">
+    <!--SEARCH BAR LABEL-->
+    <mat-label> Search </mat-label>
+
+    <!--SEARCH BAR INPUT-->
+    <!-- #s is a template variable that holds the data of this input -->
+    <!-- keyup.enter executes the search method when a user releases the enter key -->
+    <input
+      matInput
+      type="text"
+      placeholder="E.g. Chicken"
+      [matAutocomplete]="auto"
+      #s
+      (keyup.enter)="search(s.value)"
+      [value]="searchTerm"
+    />
+
+    <!--SEARCH BAR AUTOCOMPLETE OPTIONS-->
+    <mat-autocomplete autoActiveFirstOption #auto>
+      <mat-option
+        *ngFor="let option of filteredOptions | async"
+        [value]="option"
+      >
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+
+    <!--SEARCH BAR ICON-->
+    <!-- click executes the search method when you click on this mat-icon -->
+    <mat-icon matSuffix (click)="search(s.value)" class="cursor-pointer"
+      >search</mat-icon
+    >
+  </mat-form-field>
+</div>

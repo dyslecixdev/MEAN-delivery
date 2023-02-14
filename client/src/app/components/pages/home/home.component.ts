@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { FoodService } from "src/app/services/food.service";
 import { Food } from "src/app/shared/models/Food";
 
@@ -10,10 +11,19 @@ export class HomeComponent {
   cols = 3;
   foods: Food[] = [];
 
-  // Populates the food array with sample_foods from data.ts.
+  // Populates the food array with either all or some of the object in the sample_foods array from data.ts.
   // constructor method is called whenever we create new objects.
-  constructor(private foodService: FoodService) {
-    this.foods = foodService.getAllFood();
+  constructor(
+    private foodService: FoodService,
+    activatedRoute: ActivatedRoute
+  ) {
+    activatedRoute.params.subscribe((params) => {
+      if (params.searchTerm)
+        this.foods = this.foodService.getAllFoodsBySearchTerm(
+          params.searchTerm
+        );
+      else this.foods = foodService.getAllFood();
+    });
   }
 
   // Changes the number of columns based on viewport.
