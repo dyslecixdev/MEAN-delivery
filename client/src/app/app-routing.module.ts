@@ -41,6 +41,16 @@ const routes: Routes = [
     redirectTo: "",
     pathMatch: "full",
   },
+  {
+    path: "search/:searchTerm/food/:foodId",
+    redirectTo: "food/:foodId",
+    pathMatch: "full",
+  },
+  {
+    path: "tag/:tag/food/:foodId",
+    redirectTo: "food/:foodId",
+    pathMatch: "full",
+  },
 ];
 
 @NgModule({

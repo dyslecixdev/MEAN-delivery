@@ -4,7 +4,10 @@
   class="w-full px-10 flex justify-between align-baseline flex-wrap"
 >
   <mat-chip-listbox *ngFor="let tag of tags" class="flex justify-center">
-    <mat-chip routerLink="/tag/{{ tag.name }}">
+    <mat-chip
+      routerLink="/tag/{{ tag.name }}"
+      class="font-amatic text-2xl font-black"
+    >
       {{ tag.name }} ({{ tag.count }})
     </mat-chip>
   </mat-chip-listbox>

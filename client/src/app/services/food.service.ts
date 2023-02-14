@@ -33,5 +33,11 @@ export class FoodService {
       : // tags? checks if tag is included in it.
         this.getAllFoods().filter((food) => food.tags?.includes(tag));
   }
+
+  // Gets one food object by its id.
+  getFoodById(foodId: string): Food {
+    // The // returns a new Food() if food.id is undefined.
+    return this.getAllFoods().find((food) => food.id === foodId) ?? new Food();
+  }
 }
 

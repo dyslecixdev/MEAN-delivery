@@ -1,1 +1,31 @@
-<div>one food</div>
+<!--ONE FOOD PAGE-->
+<div class="min-h-[90vh] bg-red flex justify-center px-2 py-6">
+  <mat-card class="xs:w-full sm:w-[70%] md:w-[55%] lg:w-[45%] xl:w-[35%] h-fit">
+    <mat-card-header>
+      <!--FOOD NAME-->
+      <mat-card-title class="font-amatic text-4xl font-bold">{{
+        food.name
+      }}</mat-card-title>
+
+      <!--FOOD PRICE-->
+      <mat-card-subtitle class="font-josefin text-xl text-black">{{
+        food.price | currency
+      }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <!--FOOD IMAGE-->
+    <img [src]="food.imageUrl" [alt]="food.name" class="object-cover" />
+
+    <!--FOOD DESCRIPTION-->
+    <mat-card-content class="font-amatic text-4xl font-extrabold">
+      {{ food.desc }}
+    </mat-card-content>
+
+    <!--ADD TO CART BUTTON-->
+    <mat-card-actions align="end">
+      <button class="bg-black text-white rounded-sm p-2 font-josefin">
+        Add to Cart
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

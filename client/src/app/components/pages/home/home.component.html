@@ -22,19 +22,19 @@
         <mat-card-header>
           <mat-card-title-group>
             <!--FOOD NAME-->
-            <mat-card-title class="font-amatic font-semibold">{{
+            <mat-card-title class="font-amatic text-2xl font-black">{{
               food.name
             }}</mat-card-title>
 
             <!--FOOD PRICE-->
-            <mat-card-subtitle class="font-josefin">{{
+            <mat-card-subtitle class="font-josefin text-black">{{
               food.price | currency
             }}</mat-card-subtitle>
 
             <!--SEE DETAILS BUTTON-->
             <mat-card-subtitle>
               <button
-                routerLink="food/1"
+                routerLink="food/{{ food.id }}"
                 class="bg-black text-white rounded-sm p-2 font-josefin"
               >
                 See Details
