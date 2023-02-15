@@ -26,12 +26,12 @@
 
     <!--PROFILE BUTTON-->
     <!-- *ngIf only renders this button if user is true -->
-    <button *ngIf="user" mat-icon-button [matMenuTriggerFor]="profile_menu">
+    <button *ngIf="isAuth" mat-icon-button [matMenuTriggerFor]="profile_menu">
       <mat-icon fontIcon="account_circle" class="text-white"></mat-icon>
     </button>
 
     <!--LOGIN BUTTON-->
-    <button *ngIf="!user" routerLink="login" class="font-josefin text-white">
+    <button *ngIf="!isAuth" routerLink="login" class="font-josefin text-white">
       Login
     </button>
   </div>
@@ -95,7 +95,7 @@
       </button>
 
       <!--LOGOUT BUTTON-->
-      <button class="flex items-baseline gap-2">
+      <button (click)="logout()" class="flex items-baseline gap-2">
         <mat-icon>logout</mat-icon>
         Logout
       </button>

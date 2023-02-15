@@ -4,6 +4,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReactiveFormsModule } from "@angular/forms";
+import { ToastrModule } from "ngx-toastr";
 
 // Angular Material modules.
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
@@ -58,6 +59,12 @@ import { NotFoundComponent } from "./components/partials/not-found/not-found.com
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    // Configures default options for ToastrModule.
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: "toast-bottom-right",
+      newestOnTop: false,
+    }),
     MatAutocompleteModule,
     MatBadgeModule,
     MatButtonModule,

@@ -192,7 +192,7 @@ export const sample_users: any[] = [
   {
     name: "Christian",
     email: "cd@gmail.com",
-    password: "12345",
+    password: "12345678",
     isAdmin: true,
   },
 ];
