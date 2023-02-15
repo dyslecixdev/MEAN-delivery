@@ -32,6 +32,7 @@ import { FooterComponent } from "./components/partials/footer/footer.component";
 import { TitleComponent } from "./components/partials/title/title.component";
 import { TableComponent } from "./components/partials/table/table.component";
 import { CheckoutComponent } from './components/pages/checkout/checkout.component';
+import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { CheckoutComponent } from './components/pages/checkout/checkout.componen
     TitleComponent,
     TableComponent,
     CheckoutComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

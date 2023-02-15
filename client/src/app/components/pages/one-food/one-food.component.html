@@ -1,6 +1,16 @@
 <!--ONE FOOD PAGE-->
 <div class="min-h-[80vh] bg-gradient-red flex justify-center px-2 py-6">
-  <mat-card class="xs:w-full sm:w-[70%] md:w-[55%] lg:w-[45%] xl:w-[35%] h-fit">
+  <!--NOT FOUND MESSAGE-->
+  <app-not-found
+    [visible]="!food.id"
+    notFoundMessage="Food Not Found"
+    resetLinkText="Back to Home Page"
+  ></app-not-found>
+
+  <mat-card
+    *ngIf="food.id"
+    class="xs:w-full sm:w-[70%] md:w-[55%] lg:w-[45%] xl:w-[35%] h-fit"
+  >
     <mat-card-header>
       <!--FOOD NAME-->
       <mat-card-title class="font-amatic text-4xl font-bold">{{

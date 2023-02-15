@@ -3,12 +3,23 @@
   <!--TITLE-->
   <app-title title="Your Cart" class="ml-8 mb-8"></app-title>
 
+  <!--NOT FOUND MESSAGE-->
+  <app-not-found
+    [visible]="!cart || !cart.items.length"
+    notFoundMessage="Your Cart is Empty!"
+    resetLinkText="Add Some Food"
+  ></app-not-found>
+
   <!--CART FOOD TABLE-->
-  <app-table class="md:mx-8 overflow-x-scroll"></app-table>
+  <app-table
+    *ngIf="cart && cart.items.length > 0"
+    class="md:mx-8 overflow-x-scroll rounded-md"
+  ></app-table>
 
   <!--TOTAL PRICE, TOTAL QUANTITY, AND CHECKOUT BUTTON-->
   <div
-    class="md:mx-8 mt-8 bg-white p-3 flex justify-between flex-wrap align-baseline font-amatic text-3xl font-bold"
+    *ngIf="cart && cart.items.length > 0"
+    class="md:mx-8 mt-8 bg-white p-3 flex justify-between flex-wrap align-baseline font-amatic text-3xl font-bold rounded-sm"
   >
     <span class="p-2">Total Price: {{ cart.totalPrice | currency }}</span>
     <span class="p-2">Total Quantity: {{ cart.totalQuantity }}</span>

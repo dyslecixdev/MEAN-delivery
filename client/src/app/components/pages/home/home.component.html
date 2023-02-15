@@ -6,6 +6,12 @@
   <!--FOOD TAGS-->
   <app-tags></app-tags>
 
+  <!--NOT FOUND MESSAGE-->
+  <app-not-found
+    [visible]="!foods || !foods.length"
+    resetLinkText="Reset Search"
+  ></app-not-found>
+
   <!--FOOD GRID-->
   <!-- window:resize executes the onResize method whenever the screen size changes -->
   <mat-grid-list

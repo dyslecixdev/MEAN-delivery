@@ -1,0 +1,18 @@
+<!--NOT FOUND MESSAGE-->
+<div
+  *ngIf="visible"
+  class="flex justify-center align-baseline flex-col mt-10 mx-8 gap-8"
+>
+  <span
+    class="p-4 flex justify-center align-baseline font-amatic text-7xl font-black flex-wrap text-center"
+    >{{ notFoundMessage }}</span
+  >
+  <span class="flex justify-center">
+    <button
+      [routerLink]="resetLinkRoute"
+      class="w-fit bg-black text-red p-4 fit-content font-amatic text-5xl font-black"
+    >
+      {{ resetLinkText }}
+    </button>
+  </span>
+</div>
