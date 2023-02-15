@@ -19,7 +19,10 @@ export class OneFoodComponent {
     private router: Router
   ) {
     activatedRoute.params.subscribe((params) => {
-      if (params.foodId) this.food = foodService.getFoodById(params.foodId);
+      if (params.foodId)
+        foodService.getFoodById(params.foodId).subscribe((serverFood) => {
+          this.food = serverFood;
+        });
     });
   }
 

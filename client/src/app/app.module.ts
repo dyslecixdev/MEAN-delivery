@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
@@ -31,8 +32,8 @@ import { TagsComponent } from "./components/partials/tags/tags.component";
 import { FooterComponent } from "./components/partials/footer/footer.component";
 import { TitleComponent } from "./components/partials/title/title.component";
 import { TableComponent } from "./components/partials/table/table.component";
-import { CheckoutComponent } from './components/pages/checkout/checkout.component';
-import { NotFoundComponent } from './components/partials/not-found/not-found.component';
+import { CheckoutComponent } from "./components/pages/checkout/checkout.component";
+import { NotFoundComponent } from "./components/partials/not-found/not-found.component";
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { NotFoundComponent } from './components/partials/not-found/not-found.com
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatAutocompleteModule,

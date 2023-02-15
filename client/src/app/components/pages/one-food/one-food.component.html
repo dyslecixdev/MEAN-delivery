@@ -2,13 +2,13 @@
 <div class="min-h-[80vh] bg-gradient-red flex justify-center px-2 py-6">
   <!--NOT FOUND MESSAGE-->
   <app-not-found
-    [visible]="!food.id"
+    [visible]="!food"
     notFoundMessage="Food Not Found"
     resetLinkText="Back to Home Page"
   ></app-not-found>
 
   <mat-card
-    *ngIf="food.id"
+    *ngIf="food"
     class="xs:w-full sm:w-[70%] md:w-[55%] lg:w-[45%] xl:w-[35%] h-fit"
   >
     <mat-card-header>
