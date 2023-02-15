@@ -10,6 +10,7 @@ module.exports = {
         "dark-red": "#5D191B",
         blue: "#31B9B5",
         black: "#13191C",
+        "transparent-black": "rgba(19, 25, 28, 0.5)",
         gray: "#F0F0F0",
         white: "#FCFCFC",
       },
@@ -22,6 +23,16 @@ module.exports = {
       fontFamily: {
         amatic: ["Amatic SC", "cursive"],
         josefin: ["Josefin Sans", "sans-serif"],
+      },
+      // Keyframes
+      keyframes: {
+        spin: {
+          "0%": { transform: "rotate(0)" },
+          "100%": { transform: "rotate(360)" },
+        },
+      },
+      animation: {
+        "pizza-spin": "spin 12s linear infinite",
       },
     },
   },

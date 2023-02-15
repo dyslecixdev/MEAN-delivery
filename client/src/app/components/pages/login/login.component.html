@@ -1,2 +1,64 @@
 <!--LOGIN PAGE-->
-<div>login</div>
+<div class="min-h-[80vh] bg-gradient-red flex flex-col px-2 py-6">
+  <!--TITLE-->
+  <app-title title="Login" class="ml-8"></app-title>
+
+  <div
+    class="my-12 mx-8 flex flex-col md:flex-row items-center md:gap-8 md:justify-evenly"
+  >
+    <!--LOGIN FORM-->
+    <!-- ngSubmit executes the submit function when a submit button is clicked -->
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="submit()"
+      class="flex flex-col bg-transparent-black p-4 rounded-sm w-full sm:w-[70vw] md:w-[55vw] lg:w-[40vw] xl:w-[30vw] mb-16"
+    >
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input
+          matInput
+          placeholder="test@gmail.com"
+          formControlName="email"
+          required
+        />
+        <mat-error *ngIf="fc.email.errors && isSubmitted">
+          {{ getEmailErrorMessage() }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input
+          matInput
+          placeholder="Password"
+          formControlName="password"
+          required
+          [type]="hide ? 'password' : 'text'"
+        />
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-error *ngIf="fc.password.errors && isSubmitted">
+          {{ getPasswordErrorMessage() }}
+        </mat-error>
+      </mat-form-field>
+
+      <!--LOGIN BUTTON-->
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          class="bg-red text-white py-2 px-4 w-fit rounded-md font-josefin"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+
+    <!--PIZZA IMAGE-->
+    <img
+      src="../../../../assets/pizza.png"
+      alt="spinning pizza"
+      class="h-[250px] w-[250px] md:h-[300px] md:w-[300px] animate-pizza-spin"
+    />
+  </div>
+</div>

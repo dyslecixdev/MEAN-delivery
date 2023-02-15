@@ -12,7 +12,7 @@
     />
   </a>
 
-  <div class="flex align-baseline gap-2">
+  <div class="flex items-center gap-2">
     <!--CART BUTTON-->
     <!-- metMenuTriggerFor triggers a the mat-menu with #cart-menu to pop-up -->
     <button mat-icon-button [matMenuTriggerFor]="cart_menu">
@@ -89,13 +89,13 @@
   <mat-menu #profile_menu class="bg-gray">
     <div class="p-3 flex flex-col gap-4 font-josefin">
       <!--PROFILE BUTTON-->
-      <button routerLink="profile" class="flex align-baseline gap-2">
+      <button routerLink="profile" class="flex items-baseline gap-2">
         <mat-icon>settings</mat-icon>
         Profile
       </button>
 
       <!--LOGOUT BUTTON-->
-      <button class="flex align-baseline gap-2">
+      <button class="flex items-baseline gap-2">
         <mat-icon>logout</mat-icon>
         Logout
       </button>

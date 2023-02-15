@@ -19,7 +19,7 @@
   <!--TOTAL PRICE, TOTAL QUANTITY, AND CHECKOUT BUTTON-->
   <div
     *ngIf="cart && cart.items.length > 0"
-    class="md:mx-8 mt-8 bg-white p-3 flex justify-between flex-wrap align-baseline font-amatic text-3xl font-bold rounded-sm"
+    class="md:mx-8 mt-8 bg-white p-3 flex justify-between flex-wrap items-baseline font-amatic text-3xl font-bold rounded-sm"
   >
     <span class="p-2">Total Price: {{ cart.totalPrice | currency }}</span>
     <span class="p-2">Total Quantity: {{ cart.totalQuantity }}</span>
