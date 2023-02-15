@@ -1,0 +1,86 @@
+<!--CART FOOD TABLE-->
+<table
+  mat-table
+  [dataSource]="dataSource"
+  matSort
+  (matSortChange)="announceSortChange($event)"
+>
+  <!--NAME COLUMN-->
+  <ng-container matColumnDef="name">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by name"
+    >
+      Name
+    </th>
+    <td mat-cell *matCellDef="let cartItem">{{ cartItem.name }}</td>
+  </ng-container>
+
+  <!--PRICE COLUMN-->
+  <ng-container matColumnDef="price">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by price"
+    >
+      Price
+    </th>
+    <td mat-cell *matCellDef="let cartItem">
+      {{ cartItem.price | currency }}
+    </td>
+  </ng-container>
+
+  <!--QUANTITY COLUMN-->
+  <ng-container matColumnDef="quantity">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by quantity"
+    >
+      Quantity
+    </th>
+    <td mat-cell *matCellDef="let cartItem">
+      <select
+        #quantitySelect
+        [value]="cartItem.quantity"
+        (change)="changeQuantity(cartItem, quantitySelect.value)"
+        class="w-[3rem] outline-none border-none text-md font-thin"
+      >
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+      </select>
+    </td>
+  </ng-container>
+
+  <!--TOTAL PRICE COLUMN-->
+  <ng-container matColumnDef="total price">
+    <th mat-header-cell *matHeaderCellDef>Total Price</th>
+    <td mat-cell *matCellDef="let cartItem">
+      {{ cartItem.quantity * cartItem.price | currency }}
+    </td>
+  </ng-container>
+
+  <!--REMOVE ITEM COLUMN-->
+  <ng-container matColumnDef="remove item">
+    <th mat-header-cell *matHeaderCellDef>Remove Item</th>
+    <td mat-cell *matCellDef="let cartItem">
+      <button mat-icon-button (click)="removeFromCart(cartItem)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

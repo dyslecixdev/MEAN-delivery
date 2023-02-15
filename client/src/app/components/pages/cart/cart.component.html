@@ -1,2 +1,22 @@
 <!--CART PAGE-->
-<div>cart</div>
+<div class="min-h-[80vh] bg-gradient-red flex flex-col px-2 py-6">
+  <!--TITLE-->
+  <app-title title="Your Cart" class="ml-8 mb-8"></app-title>
+
+  <!--CART FOOD TABLE-->
+  <app-table class="md:mx-8 overflow-x-scroll"></app-table>
+
+  <!--TOTAL PRICE, TOTAL QUANTITY, AND CHECKOUT BUTTON-->
+  <div
+    class="md:mx-8 mt-8 bg-white p-3 flex justify-between flex-wrap align-baseline font-amatic text-3xl font-bold"
+  >
+    <span class="p-2">Total Price: {{ cart.totalPrice | currency }}</span>
+    <span class="p-2">Total Quantity: {{ cart.totalQuantity }}</span>
+    <button
+      routerLink="checkout"
+      class="m-2 bg-black text-white rounded-sm p-2 font-josefin text-lg"
+    >
+      Go to Checkout
+    </button>
+  </div>
+</div>

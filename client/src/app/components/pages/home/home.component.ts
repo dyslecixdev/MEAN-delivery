@@ -39,7 +39,6 @@ export class HomeComponent {
 
   // Changes the number of columns based on viewport.
   onResize(event: number) {
-    console.log(event);
     if (window.innerWidth <= 540) this.cols = 1;
     else if (window.innerWidth <= 800) this.cols = 2;
     else if (window.innerWidth <= 1050) this.cols = 3;
