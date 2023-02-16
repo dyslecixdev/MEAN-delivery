@@ -6,6 +6,7 @@ import { HomeComponent } from "./components/pages/home/home.component";
 import { LoginComponent } from "./components/pages/login/login.component";
 import { OneFoodComponent } from "./components/pages/one-food/one-food.component";
 import { ProfileComponent } from "./components/pages/profile/profile.component";
+import { RegisterComponent } from "./components/pages/register/register.component";
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
     path: "checkout",
     component: CheckoutComponent,
   },
+  {
+    path: "register",
+    component: RegisterComponent,
+  },
   // Redirects from an empty string home to an empty string (viz. "/").
   {
     path: "home",
@@ -59,6 +64,16 @@ const routes: Routes = [
   {
     path: "cart/checkout",
     redirectTo: "checkout",
+    pathMatch: "full",
+  },
+  {
+    path: "login/register",
+    redirectTo: "register",
+    pathMatch: "full",
+  },
+  {
+    path: "register/login",
+    redirectTo: "login",
     pathMatch: "full",
   },
 ];

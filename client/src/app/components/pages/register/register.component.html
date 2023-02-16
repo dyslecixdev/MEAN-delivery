@@ -1,18 +1,31 @@
 <!--LOGIN PAGE-->
 <div class="min-h-[80vh] bg-gradient-red flex flex-col px-2 py-6">
   <!--TITLE-->
-  <app-title title="Login" class="ml-8"></app-title>
+  <app-title title="Register" class="ml-8"></app-title>
 
   <div
     class="my-12 mx-8 md:mr-16 flex flex-col md:flex-row items-center md:gap-8 md:justify-evenly"
   >
-    <!--LOGIN FORM-->
-    <!-- ngSubmit executes the submit function when a submit button is clicked -->
+    <!--REGISTER FORM-->
     <form
-      [formGroup]="loginForm"
+      [formGroup]="registerForm"
       (ngSubmit)="submit()"
       class="flex flex-col bg-transparent-black p-4 rounded-sm w-full sm:w-[70vw] md:w-[55vw] lg:w-[40vw] xl:w-[30vw] mb-16"
     >
+      <!--NAME INPUT-->
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your name</mat-label>
+        <input
+          matInput
+          placeholder="Jane Doe"
+          formControlName="name"
+          required
+        />
+        <mat-error *ngIf="fc.name.errors && isSubmitted">
+          {{ getNameErrorMessage() }}
+        </mat-error>
+      </mat-form-field>
+
       <!--EMAIL INPUT-->
       <mat-form-field appearance="fill">
         <mat-label>Enter your email</mat-label>
@@ -47,30 +60,50 @@
         </mat-error>
       </mat-form-field>
 
-      <!--REGISTER TEXT-->
-      <div class="flex justify-between items-center">
+      <!--CONFIRM PASSWORD INPUT-->
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password again</mat-label>
+        <input
+          matInput
+          placeholder="Confirm Password"
+          formControlName="confirmPassword"
+          required
+          [type]="hide ? 'confirmPassword' : 'text'"
+        />
+
+        <!--HIDE/SHOW CONFIRM PASSWORD BUTTON-->
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-error *ngIf="fc.confirmPassword.errors && isSubmitted">
+          {{ getConfirmPasswordErrorMessage() }}
+        </mat-error>
+      </mat-form-field>
+
+      <div class="flex justify-between items-center mt-4">
+        <!--LOGIN TEXT-->
         <span class="text-white font-amatic text-2xl font-black">
-          Don't have an
+          Already have an
           <a
-            routerLink="register"
+            routerLink="login"
             [queryParams]="{ returnUrl: returnUrl }"
             class="animate-text-color-change underline"
             >account </a
           >?
         </span>
 
-        <!--LOGIN BUTTON-->
+        <!--REGISTER BUTTON-->
         <button
           type="submit"
           class="bg-red text-white py-2 px-4 w-fit rounded-md font-josefin"
         >
-          Login
+          Register
         </button>
       </div>
     </form>
 
     <!--PIZZA ANIMATION-->
-    <img src="../../../../assets/cute-salad.png" alt="cute salad" />
+    <img src="../../../../assets/cute-bread.png" alt="cute bread" />
     <!-- <img
       src="../../../../assets/pizza.png"
       alt="spinning pizza"

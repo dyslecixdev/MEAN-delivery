@@ -7,7 +7,7 @@ import {
   FOODS_BY_TAG_URL,
   FOODS_TAGS_URL,
   FOODS_URL,
-} from "../shared/constants/utils";
+} from "../shared/constants/urls";
 import { Food } from "../shared/models/Food";
 import { Tag } from "../shared/models/Tags";
 
