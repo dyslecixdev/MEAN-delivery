@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReactiveFormsModule } from "@angular/forms";
@@ -35,7 +35,9 @@ import { TitleComponent } from "./components/partials/title/title.component";
 import { TableComponent } from "./components/partials/table/table.component";
 import { CheckoutComponent } from "./components/pages/checkout/checkout.component";
 import { NotFoundComponent } from "./components/partials/not-found/not-found.component";
-import { RegisterComponent } from './components/pages/register/register.component';
+import { RegisterComponent } from "./components/pages/register/register.component";
+import { LoadingComponent } from "./components/partials/loading/loading.component";
+import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import { RegisterComponent } from './components/pages/register/register.componen
     CheckoutComponent,
     NotFoundComponent,
     RegisterComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +84,10 @@ import { RegisterComponent } from './components/pages/register/register.componen
     MatTableModule,
     MatToolbarModule,
   ],
-  providers: [],
+  providers: [
+    // Adds the LoadingInterceptor as an interceptor.
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

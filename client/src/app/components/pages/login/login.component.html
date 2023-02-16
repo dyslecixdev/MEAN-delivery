@@ -11,7 +11,7 @@
     <form
       [formGroup]="loginForm"
       (ngSubmit)="submit()"
-      class="flex flex-col bg-transparent-black p-4 rounded-sm w-full sm:w-[70vw] md:w-[55vw] lg:w-[40vw] xl:w-[30vw] mb-16"
+      class="flex flex-col bg-transparent-black p-4 rounded-sm w-full sm:w-[70vw] md:w-[55vw] lg:w-[40vw] xl:w-[30vw] mb-16 md:mb-0"
     >
       <!--EMAIL INPUT-->
       <mat-form-field appearance="fill">
@@ -69,12 +69,13 @@
       </div>
     </form>
 
-    <!--PIZZA ANIMATION-->
-    <img src="../../../../assets/cute-salad.png" alt="cute salad" />
-    <!-- <img
-      src="../../../../assets/pizza.png"
-      alt="spinning pizza"
-      class="h-[250px] w-[250px] md:h-[300px] md:w-[300px] animate-pizza-spin"
-    /> -->
+    <!--SALAD ANIMATION-->
+    <div class="h-[250px] w-[250px] rounded-md md:animate-salad-color-change">
+      <img
+        src="../../../../assets/cute-salad.png"
+        alt="cute salad"
+        class="md:ml-10 md:mt-10 animate-salad-wave"
+      />
+    </div>
   </div>
 </div>

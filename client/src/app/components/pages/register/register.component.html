@@ -10,7 +10,7 @@
     <form
       [formGroup]="registerForm"
       (ngSubmit)="submit()"
-      class="flex flex-col bg-transparent-black p-4 rounded-sm w-full sm:w-[70vw] md:w-[55vw] lg:w-[40vw] xl:w-[30vw] mb-16"
+      class="flex flex-col bg-transparent-black p-4 rounded-sm w-full sm:w-[70vw] md:w-[55vw] lg:w-[40vw] xl:w-[30vw] mb-16 md:mb-0"
     >
       <!--NAME INPUT-->
       <mat-form-field appearance="fill">
@@ -102,12 +102,13 @@
       </div>
     </form>
 
-    <!--PIZZA ANIMATION-->
-    <img src="../../../../assets/cute-bread.png" alt="cute bread" />
-    <!-- <img
-      src="../../../../assets/pizza.png"
-      alt="spinning pizza"
-      class="h-[250px] w-[250px] md:h-[300px] md:w-[300px] animate-pizza-spin"
-    /> -->
+    <!--BREAD ANIMATION-->
+    <div class="h-[250px] w-[250px] rounded-md md:animate-bread-color-change">
+      <img
+        src="../../../../assets/cute-bread.png"
+        alt="cute bread"
+        class="md:ml-10 md:mt-10 animate-bread-bob"
+      />
+    </div>
   </div>
 </div>

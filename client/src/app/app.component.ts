@@ -3,6 +3,9 @@ import { Component } from "@angular/core";
 @Component({
   selector: "app-root",
   template: `
+    <!--LOADING ANIMATION-->
+    <app-loading></app-loading>
+
     <!--NAVBAR-->
     <app-navbar></app-navbar>
 
