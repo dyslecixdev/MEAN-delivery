@@ -52,6 +52,20 @@ MONGO_URI = MongoDB connection string (Note: Don't forget to replace <password> 
 JWT_SECRET = Any Text Here
 ```
 
+### Paypal Client ID
+1. Create an account or login to [Paypal](https://developer.paypal.com/home/).
+2. Click App & Credentials, then Create App.
+![paypal-1](https://user-images.githubusercontent.com/85912934/219774626-3c841e2d-d710-486e-93d7-8d2154ccc5b3.png)
+
+3. Type an App Name, leave it on Merchant, and click Create App.
+![paypal-2](https://user-images.githubusercontent.com/85912934/219774725-927c12d8-e07e-4860-b6a1-d6c2421a95f7.png)
+
+4. Change the following in the client's index.html using your Client ID:
+![paypal-3](https://user-images.githubusercontent.com/85912934/219774776-73078e36-bb0c-4334-8b85-c1e90b41f4d4.png)
+```html
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR CLIENT ID"></script>
+```
+
 ### Add Food Data
 1. Open a terminal, cd into the server, then type npm start.
 2. Open another terminal, cd into the clinet, then type ng serve -o.
@@ -65,7 +79,7 @@ JWT_SECRET = Any Text Here
 - User can clear or view the food in their cart.
 - User can change the quantity of any food in their cart.
 - Logged in user can choose their location.
-- Logged in user can pretend to purchase their food using Paypal.
+- Logged in user can pretend to purchase their food using Paypal (Note: If you didn't make a Paypal sandbox account, then use sb-rl1yn25021142@personal.example.com as the email and A90d>Hc< as the password).
 - Logged in user can see their order details after their fake purchase.
 - User can view a pizza loading image while assets are fetched.
 - Responsive web design for all portrait and landscape devices.
@@ -75,6 +89,9 @@ JWT_SECRET = Any Text Here
 - Cross browser support for Chrome, Firefox, Opera, and Safari.
 - Logged in user can view, edit, and delete their profile.
 - Frontend security to prevent any user from seeing the order details of other users.
+
+## Bugs
+- Loading interceptor will appear behind angular material components.
 
 ## [MEAN Delivery Demo](https://mean-delivery-frontend.onrender.com/)
 
