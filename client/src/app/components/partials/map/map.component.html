@@ -1,0 +1,11 @@
+<!--LEAFLET MAP-->
+<div class="relative w-[35rem] h-[22rem] text-center z-0">
+  <button
+    (click)="findMyLocation()"
+    class="w-full py-2 text-white bg-transparent-black font-josefin"
+  >
+    Find My Location
+  </button>
+  <!-- #map gives access to this div from the ts file -->
+  <div #map class="w-full h-full"></div>
+</div>

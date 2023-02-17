@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { AuthGuard } from "./auth/guards/auth.guard";
 import { CartComponent } from "./components/pages/cart/cart.component";
 import { CheckoutComponent } from "./components/pages/checkout/checkout.component";
 import { HomeComponent } from "./components/pages/home/home.component";
@@ -40,6 +41,8 @@ const routes: Routes = [
   {
     path: "checkout",
     component: CheckoutComponent,
+    // Redirect away from this page if the canActivate on AuthGuard returns false.
+    canActivate: [AuthGuard],
   },
   {
     path: "register",

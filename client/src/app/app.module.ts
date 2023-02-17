@@ -40,6 +40,7 @@ import { RegisterComponent } from "./components/pages/register/register.componen
 import { LoadingComponent } from "./components/partials/loading/loading.component";
 import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
 import { ListComponent } from "./components/partials/list/list.component";
+import { MapComponent } from './components/partials/map/map.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { ListComponent } from "./components/partials/list/list.component";
     RegisterComponent,
     LoadingComponent,
     ListComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
