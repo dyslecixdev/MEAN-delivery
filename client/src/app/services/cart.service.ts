@@ -14,6 +14,11 @@ export class CartService {
 
   constructor() {}
 
+  // Gets the latest cart.
+  getCart(): Cart {
+    return this.cartSubject.value;
+  }
+
   // Either gets the cart from local storage, or creates a new cart if none existed.
   private getCartFromLocalStorage(): Cart {
     const cartJson = localStorage.getItem("Cart");

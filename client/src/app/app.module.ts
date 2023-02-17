@@ -12,6 +12,7 @@ import { MatBadgeModule } from "@angular/material/badge";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatChipsModule } from "@angular/material/chips";
+import { MatExpansionModule } from "@angular/material/expansion";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatIconModule } from "@angular/material/icon";
@@ -38,6 +39,7 @@ import { NotFoundComponent } from "./components/partials/not-found/not-found.com
 import { RegisterComponent } from "./components/pages/register/register.component";
 import { LoadingComponent } from "./components/partials/loading/loading.component";
 import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
+import { ListComponent } from "./components/partials/list/list.component";
 
 @NgModule({
   declarations: [
@@ -57,6 +59,7 @@ import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
     NotFoundComponent,
     RegisterComponent,
     LoadingComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +78,7 @@ import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
     MatButtonModule,
     MatCardModule,
     MatChipsModule,
+    MatExpansionModule,
     MatFormFieldModule,
     MatGridListModule,
     MatIconModule,

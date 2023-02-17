@@ -24,6 +24,11 @@ export class UserService {
     this.userObservable = this.userSubject.asObservable();
   }
 
+  // Gets the current user.
+  public get currentUser(): User {
+    return this.userSubject.value;
+  }
+
   // Returns a user observable when logging in, then adds it to local storage along with showing a toastr message.
   // IUserLogin indicates it is an interface (Note: an interface cannnot create a new instance [e.g. new User()] like a class can).
   login(userLogin: IUserLogin): Observable<User> {

@@ -6,13 +6,6 @@ import { CartService } from "src/app/services/cart.service";
 import { Cart } from "src/app/shared/models/Cart";
 import { CartItem } from "src/app/shared/models/CartItem";
 
-export interface PeriodicElement {
-  food: {};
-  name: string;
-  price: number;
-  quantity: number;
-}
-
 @Component({
   selector: "app-table",
   templateUrl: "table.component.html",
@@ -39,6 +32,7 @@ export class TableComponent implements AfterViewInit {
     cartService.getCartObservable().subscribe((cart) => {
       this.cart = cart;
       this.cartItems = cart.items;
+      console.log(this.cartItems);
       this.dataSource = new MatTableDataSource(this.cartItems);
     });
   }

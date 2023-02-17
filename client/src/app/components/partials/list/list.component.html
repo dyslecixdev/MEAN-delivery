@@ -1,0 +1,22 @@
+<!--CART FOOD LIST-->
+<mat-accordion>
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title class="font-josefin"> Your Order </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div *ngFor="let cartItem of cartItems" class="flex flex-col items-center">
+      <img
+        src="{{ cartItem.food.imageUrl }}"
+        alt="{{ cartItem.name }}"
+        class="object-cover h-[200px] w-[200px] flex justify-center mt-8"
+      />
+      <span class="font-josefin text-lg">
+        {{ cartItem.name }} x {{ cartItem.quantity }} =
+        {{ cartItem.price | currency }}
+      </span>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

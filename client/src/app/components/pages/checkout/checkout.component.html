@@ -1,1 +1,40 @@
-<div>checkout</div>
+<!--CHECKOUT PAGE-->
+<div class="min-h-[80vh] bg-gradient-red flex flex-col items-center px-2 py-6">
+  
+  <!--ORDER TITLE-->
+  <app-title title="Order Form" class="md:ml-8"/>
+  
+    <div class="flex flex-col mt-8 md:flex-row md:gap-40">
+      <div class="flex flex-col items-center">
+        <!--ORDER FORM-->
+        <form [formGroup]="checkoutForm">
+          <!--NAME INPUT-->
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your name</mat-label>
+                <input
+                  matInput
+                  placeholder="Jane Doe"
+                  formControlName="name"
+                  required
+                />
+                <mat-error *ngIf="fc.name.errors">
+                    {{ getNameErrorMessage() }}
+                </mat-error>
+            </mat-form-field>
+        </form>
+
+        <!--CART FOOD LIST-->
+        <app-list></app-list>
+      </div>
+
+      <!--MAP TITLE-->
+      <div class="flex flex-col items-center mt-8 md:mt-0">
+        <app-title title="Choose Your Address on Map" fontSize="2.5rem"></app-title>
+      </div>
+    </div>
+  
+    <!--PAYMENT BUTTON-->
+    <button (click)="createOrder()" class="w-fit bg-black text-white text-xl p-2 mt-8 font-josefin rounded-md">
+      Go to Payment
+    </button>
+</div>

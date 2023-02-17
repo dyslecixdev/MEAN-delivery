@@ -6,5 +6,6 @@ import { Component, Input } from "@angular/core";
 })
 export class TitleComponent {
   @Input() title!: string;
+  @Input() fontSize?: string = "3.75rem";
 }
 

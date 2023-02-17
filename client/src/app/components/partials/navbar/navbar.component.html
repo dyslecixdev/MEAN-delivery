@@ -51,16 +51,16 @@
       <div class="h-[15vh] py-3 overflow-y-scroll">
         <div
           *ngFor="let cartItem of cartItems"
-          clas="flex justify-between font-light my-4"
+          class="flex justify-between font-light my-4"
         >
           {{ cartItem.name }} x {{ cartItem.quantity }}
           <!-- Uses angular expression to add currency icon -->
-          <span class="font-bold">{{ cartItem.price | currency }}</span>
+          <span class="font-light">{{ cartItem.price | currency }}</span>
         </div>
       </div>
 
       <!--TOTAL PRICE-->
-      <div class="flex justify-between py-3 font-medium">
+      <div class="flex justify-between py-3">
         Total:
         <span class="font-bold">{{ cartPrice | currency }}</span>
       </div>
@@ -69,7 +69,7 @@
         <!--CLEAR CART BUTTON-->
         <button
           (click)="clearCart()"
-          class="bg-red text-white rounded-sm p-2 font-josefin"
+          class="bg-red text-white rounded-md p-2 font-josefin"
         >
           Clear Cart
         </button>
@@ -77,7 +77,7 @@
         <!--VIEW CART BUTTON-->
         <button
           routerLink="cart"
-          class="bg-black text-white rounded-sm p-2 font-josefin"
+          class="bg-black text-white rounded-md p-2 font-josefin"
         >
           View Cart
         </button>
@@ -89,13 +89,13 @@
   <mat-menu #profile_menu class="bg-gray">
     <div class="p-3 flex flex-col gap-4 font-josefin">
       <!--PROFILE BUTTON-->
-      <button routerLink="profile" class="flex items-baseline gap-2">
+      <button routerLink="profile" class="flex items-center gap-2">
         <mat-icon>settings</mat-icon>
         Profile
       </button>
 
       <!--LOGOUT BUTTON-->
-      <button (click)="logout()" class="flex items-baseline gap-2">
+      <button (click)="logout()" class="flex items-center gap-2">
         <mat-icon>logout</mat-icon>
         Logout
       </button>
