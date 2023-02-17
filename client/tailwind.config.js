@@ -83,6 +83,11 @@ module.exports = {
           "60%": { backgroundColor: "#fab659" },
           "100%": { backgroundColor: "#fab659" },
         },
+        bob: {
+          "0%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-30px)" },
+          "100%": { transform: "translateY(0)" },
+        },
       },
       animation: {
         "pizza-spin": "spin 12s linear infinite",
@@ -91,6 +96,7 @@ module.exports = {
         "salad-color-change": "color_change_3 4s linear infinite",
         "bread-bob": "bob 4s linear infinite",
         "bread-color-change": "color_change_2 4s linear infinite",
+        "receipt-bob": "bob 2s linear infinite",
       },
     },
   },

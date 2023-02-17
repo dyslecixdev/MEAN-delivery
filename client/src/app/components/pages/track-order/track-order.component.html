@@ -1,0 +1,81 @@
+<!--REGISTER PAGE-->
+<div class="min-h-[80vh] bg-gradient-red flex flex-col px-2 py-6">
+  <!--TITLE-->
+  <app-title
+    title="Order #{{ order.id }}"
+    class="md:ml-8 mb-8 self-center md:self-start break-all"
+  ></app-title>
+
+  <div class="md:flex md:justify-evenly md:items-center">
+    <!--RECEIPT ANIMATION-->
+    <img
+      src="../../../../assets/cute-receipt.png"
+      alt="cute receipt"
+      class="animate-receipt-bob"
+    />
+
+    <div
+      class="h-fit text-2xl font-josefin flex flex-col gap-4 bg-transparent-white p-2 rounded-md"
+    >
+      <!--ORDER DATE-->
+      <div>
+        <!-- Uses | date : "medium" to convert createdAt into a date with time -->
+        <strong>Date:</strong>
+        {{ order.createdAt | date : "medium" }}
+      </div>
+
+      <!--USER NAME-->
+      <div>
+        <strong>Name:</strong>
+        {{ order.name }}
+      </div>
+
+      <!--ORDER ADDRESS-->
+      <div>
+        <strong>Address:</strong>
+        {{ order.addressLatLng?.lat }}, {{ order.addressLatLng?.lng }}
+      </div>
+
+      <!--ORDER STATUS-->
+      <div>
+        <strong>Status:</strong>
+        {{ order.status }}
+      </div>
+
+      <!--ORDER PAYMENT ID-->
+      <div *ngIf="order.paymentId">
+        <strong>Payment ID:</strong>
+        {{ order.paymentId }}
+      </div>
+
+      <!--ORDER FOOD LIST-->
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title class="font-josefin"> Your Order </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div
+            *ngFor="let orderItem of order.items"
+            class="flex flex-col items-center mb-16"
+          >
+            <img
+              src="{{ orderItem.food.imageUrl }}"
+              alt="{{ orderItem.name }}"
+              class="object-cover h-[200px] w-[200px] flex justify-center"
+            />
+            <span class="font-josefin text-lg">
+              {{ orderItem.food.name }} x {{ orderItem.quantity }} =
+              {{ orderItem.price | currency }}
+            </span>
+          </div>
+          <span class="font-amatic text-4xl font-black">
+            Total: {{ order.totalPrice | currency }}
+          </span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</div>

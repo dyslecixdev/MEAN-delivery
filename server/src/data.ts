@@ -176,14 +176,3 @@ export const sample_foods: any[] = [
     tags: ["Drink", "Vegetarian"],
   },
 ];
-
-export const sample_tags: any[] = [
-  { name: "All", count: 22 },
-  { name: "Pizza", count: 8 },
-  { name: "Meat", count: 5 },
-  { name: "Vegetarian", count: 17 },
-  { name: "Popular", count: 6 },
-  { name: "Side", count: 6 },
-  { name: "Dessert", count: 4 },
-  { name: "Drink", count: 4 },
-];
