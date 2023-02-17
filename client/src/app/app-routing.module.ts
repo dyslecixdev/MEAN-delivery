@@ -9,6 +9,7 @@ import { OneFoodComponent } from "./components/pages/one-food/one-food.component
 import { PaymentComponent } from "./components/pages/payment/payment.component";
 import { ProfileComponent } from "./components/pages/profile/profile.component";
 import { RegisterComponent } from "./components/pages/register/register.component";
+import { TrackOrderComponent } from "./components/pages/track-order/track-order.component";
 
 const routes: Routes = [
   {
@@ -52,6 +53,16 @@ const routes: Routes = [
   {
     path: "payment",
     component: PaymentComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "payment",
+    component: PaymentComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "track/:orderId",
+    component: TrackOrderComponent,
     canActivate: [AuthGuard],
   },
   // Redirects from an empty string home to an empty string (viz. "/").

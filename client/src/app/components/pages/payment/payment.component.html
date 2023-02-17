@@ -21,9 +21,7 @@
   </div>
 
   <!--PAYPAL BUTTON-->
-  <button
-    class="w-fit bg-dark-blue text-white text-xl p-2 mt-20 font-josefin rounded-md"
-  >
-    Pay with Paypal
-  </button>
+  <div class="w-fit bg-transparent-black p-2 mt-20 font-josefin rounded-sm">
+    <app-paypal-button [order]="order"></app-paypal-button>
+  </div>
 </div>

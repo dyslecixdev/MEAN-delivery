@@ -16,7 +16,6 @@ export class ListComponent {
     cartService.getCartObservable().subscribe((cart) => {
       this.cartItems = cart.items;
       this.cart = cart;
-      console.log(this.cart);
     });
   }
 }
