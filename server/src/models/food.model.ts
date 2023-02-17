@@ -18,7 +18,7 @@ export const FoodSchema = new Schema<Food>(
     imageUrl: { type: String, required: true },
   },
   {
-    // When this document is converted to a JSON or an object, it includes virtuals (i.e. properties not stored in MongoDB that have getters and setters).
+    // When this document is converted to a JSON or an object, it includes virtuals (i.e. properties not stored in MongoDB that have getters and setters) and converts _id to id.
     toJSON: { virtuals: true },
     toObject: { virtuals: true },
     timestamps: true,

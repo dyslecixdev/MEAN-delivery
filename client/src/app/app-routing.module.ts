@@ -6,6 +6,7 @@ import { CheckoutComponent } from "./components/pages/checkout/checkout.componen
 import { HomeComponent } from "./components/pages/home/home.component";
 import { LoginComponent } from "./components/pages/login/login.component";
 import { OneFoodComponent } from "./components/pages/one-food/one-food.component";
+import { PaymentComponent } from "./components/pages/payment/payment.component";
 import { ProfileComponent } from "./components/pages/profile/profile.component";
 import { RegisterComponent } from "./components/pages/register/register.component";
 
@@ -48,35 +49,14 @@ const routes: Routes = [
     path: "register",
     component: RegisterComponent,
   },
+  {
+    path: "payment",
+    component: PaymentComponent,
+  },
   // Redirects from an empty string home to an empty string (viz. "/").
   {
     path: "home",
     redirectTo: "",
-    pathMatch: "full",
-  },
-  {
-    path: "search/:searchTerm/food/:foodId",
-    redirectTo: "food/:foodId",
-    pathMatch: "full",
-  },
-  {
-    path: "tag/:tag/food/:foodId",
-    redirectTo: "food/:foodId",
-    pathMatch: "full",
-  },
-  {
-    path: "cart/checkout",
-    redirectTo: "checkout",
-    pathMatch: "full",
-  },
-  {
-    path: "login/register",
-    redirectTo: "register",
-    pathMatch: "full",
-  },
-  {
-    path: "register/login",
-    redirectTo: "login",
     pathMatch: "full",
   },
 ];

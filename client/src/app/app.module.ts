@@ -40,7 +40,9 @@ import { RegisterComponent } from "./components/pages/register/register.componen
 import { LoadingComponent } from "./components/partials/loading/loading.component";
 import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
 import { ListComponent } from "./components/partials/list/list.component";
-import { MapComponent } from './components/partials/map/map.component';
+import { MapComponent } from "./components/partials/map/map.component";
+import { AuthInterceptor } from "./auth/auth.interceptor";
+import { PaymentComponent } from './components/pages/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,7 @@ import { MapComponent } from './components/partials/map/map.component';
     LoadingComponent,
     ListComponent,
     MapComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,9 +93,10 @@ import { MapComponent } from './components/partials/map/map.component';
     MatTableModule,
     MatToolbarModule,
   ],
+  // Adds the interceptors.
   providers: [
-    // Adds the LoadingInterceptor as an interceptor.
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })
