@@ -7,16 +7,22 @@
     <mat-expansion-panel-header>
       <mat-panel-title class="font-josefin"> Your Order </mat-panel-title>
     </mat-expansion-panel-header>
-    <div *ngFor="let cartItem of cartItems" class="flex flex-col items-center">
+    <div
+      *ngFor="let cartItem of cartItems"
+      class="flex flex-col items-center mb-16"
+    >
       <img
         src="{{ cartItem.food.imageUrl }}"
         alt="{{ cartItem.name }}"
-        class="object-cover h-[200px] w-[200px] flex justify-center mt-8"
+        class="object-cover h-[200px] w-[200px] flex justify-center"
       />
       <span class="font-josefin text-lg">
         {{ cartItem.name }} x {{ cartItem.quantity }} =
         {{ cartItem.price | currency }}
       </span>
     </div>
+    <span class="font-amatic text-4xl font-black">
+      Total: {{ cart.totalPrice | currency }}
+    </span>
   </mat-expansion-panel>
 </mat-accordion>

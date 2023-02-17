@@ -1,4 +1,10 @@
-import { Component, ElementRef, Input, ViewChild } from "@angular/core";
+import {
+  Component,
+  ElementRef,
+  Input,
+  OnChanges,
+  ViewChild,
+} from "@angular/core";
 import {
   icon,
   LatLngTuple,
@@ -18,8 +24,9 @@ import { Order } from "src/app/shared/models/Order";
   selector: "app-map",
   templateUrl: "map.component.html",
 })
-export class MapComponent {
+export class MapComponent implements OnChanges {
   @Input() order!: Order;
+  @Input() readonly = false;
 
   private readonly DEFAULT_LATLNG: LatLngTuple = [13.75, 21.62];
   private readonly MARKER_ZOOM_LEVEL = 16;
@@ -38,9 +45,13 @@ export class MapComponent {
 
   constructor(private locationService: LocationService) {}
 
-  // Executes the map on page render.
-  ngOnInit(): void {
+  // Executes the map whenever a variable changes.
+  ngOnChanges(): void {
+    if (!this.order) return;
+
     this.initializeMap();
+
+    if (this.readonly && this.addressLatLng) this.showLocationOnReadonlyMode();
   }
 
   // Creates the map.
@@ -93,11 +104,35 @@ export class MapComponent {
     });
   }
 
+  // Shows a read only version of the map so that addresslatlng cannot be changed.
+  showLocationOnReadonlyMode() {
+    const m = this.map;
+    this.setMarker(this.addressLatLng);
+    m.setView(this.addressLatLng, this.MARKER_ZOOM_LEVEL);
+
+    m.dragging.disable();
+    m.touchZoom.disable();
+    m.doubleClickZoom.disable();
+    m.scrollWheelZoom.disable();
+    m.boxZoom.disable();
+    m.keyboard.disable();
+    m.off("click");
+    m.tap?.disable();
+    this.currentMarker.dragging?.disable();
+  }
+
   // Needed for MongoDB because it cannot accept it if addressLatLng if it has more than 8 decimals.
   set addressLatLng(latlng: LatLng) {
+    if (!latlng.lat.toFixed) return;
+
     latlng.lat = parseFloat(latlng.lat.toFixed(8));
     latlng.lng = parseFloat(latlng.lng.toFixed(8));
     this.order.addressLatLng = latlng;
+  }
+
+  // Gets the order's addressLatLng.
+  get addressLatLng() {
+    return this.order.addressLatLng!;
   }
 }
 

@@ -52,6 +52,7 @@ const routes: Routes = [
   {
     path: "payment",
     component: PaymentComponent,
+    canActivate: [AuthGuard],
   },
   // Redirects from an empty string home to an empty string (viz. "/").
   {

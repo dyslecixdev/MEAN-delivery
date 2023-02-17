@@ -1,4 +1,29 @@
 <!--PAYMENT PAGE-->
 <div class="min-h-[80vh] bg-gradient-red flex flex-col items-center px-2 py-6">
-  hello
+  <!--TITLE-->
+  <app-title
+    title="Order Summary"
+    class="md:ml-8 mb-8 self-center md:self-start"
+  ></app-title>
+
+  <div class="md:flex md:gap-40">
+    <!--CART FOOD LIST-->
+    <div class="mb-12">
+      <span class="mb-4 font-josefin text-2xl">Name: {{ order.name }}</span>
+      <app-list></app-list>
+    </div>
+
+    <!--LEAFLET MAP-->
+    <div>
+      <span class="mb-4 font-josefin text-2xl">Shipping Address</span>
+      <app-map [order]="order" [readonly]="true"></app-map>
+    </div>
+  </div>
+
+  <!--PAYPAL BUTTON-->
+  <button
+    class="w-fit bg-dark-blue text-white text-xl p-2 mt-20 font-josefin rounded-md"
+  >
+    Pay with Paypal
+  </button>
 </div>
