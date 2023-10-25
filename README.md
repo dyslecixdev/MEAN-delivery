@@ -93,7 +93,5 @@ JWT_SECRET = Any Text Here
 ## Bugs
 - Loading interceptor will appear behind angular material components.
 
-## [MEAN Delivery Demo](https://mean-delivery-frontend.onrender.com/)
-
 ## Author
 - Christian Demesa: https://github.com/christiandeandemesa
